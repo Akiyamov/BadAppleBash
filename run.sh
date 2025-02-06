@@ -16,11 +16,7 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     usage
 fi
 
-mkdir -p /tmp/badapple
-
-for i in {0001..6575}; do
-  wget -qO /tmp/badapple/out$i https://raw.githubusercontent.com/Akiyamov/BadAppleBash/refs/heads/main/frames-ascii/out$i.jpg.txt
-done
+git clone https://github.com/Akiyamov/BadAppleBash.git /tmp/badapple
 
 dir="/tmp/badapple"
 
