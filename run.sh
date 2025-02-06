@@ -16,21 +16,13 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     usage
 fi
 
-echo
+mkdir -p /tmp/badapple
 
-read -p "Do you want to use mpv to play sound? You need mpv installed to do that. (y/n): " choice
-if [[ $choice =~ ^[Yy]$ ]]; then
-  # Check if mpv is installed
-  if ! command -v mpv &> /dev/null; then
-    echo
-    echo "mpv is not installed. Please install it to use this feature."
-    echo
-    exit 1
-  fi
-  mpv --no-video bad_apple.mp4 > /dev/null 2>&1 &
-fi
+for i in {0001..6575}; do
+  wget -qO /tmp/badapple/out$i https://raw.githubusercontent.com/Akiyamov/BadAppleBash/refs/heads/main/frames-ascii/out$i.jpg.txt
+done
 
-dir="$SCRIPT_DIR/frames-ascii"
+dir="/tmp/badapple"
 
 clear
 
