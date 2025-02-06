@@ -18,7 +18,7 @@ fi
 
 git clone https://github.com/Akiyamov/BadAppleBash.git /tmp/badapple
 
-dir="/tmp/badapple"
+dir="/tmp/badapple/frames-ascii"
 
 clear
 
